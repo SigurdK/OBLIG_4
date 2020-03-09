@@ -1,4 +1,4 @@
 public interface Godkjenningsfritak{
 
-    public int hentKontrollId();
+    public int hentKontrollID();
 }
