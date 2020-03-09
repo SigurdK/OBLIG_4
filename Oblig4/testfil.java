@@ -11,6 +11,7 @@ class Test {
     public void funksjon1(){
     }
     public void funksjon2(){
+      System.out.println("her har jeg lagt til alt i funksjon2, nå er denne ferdig");
     }
 
 }
