@@ -7,5 +7,6 @@ class Test {
 
     public void skrivUt(){
         System.out.println("Dette er en Testfil"+fil);
+        System.out.println("ny setning");
     }
 }
