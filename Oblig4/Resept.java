@@ -6,13 +6,13 @@ abstract class Resept {
     protected int reit;
     protected Legemiddel legemiddel;
     protected Lege utskrivendeLege;
-    protected int pasientId;
+    protected Pasient pasient;
 
-    public Resept (Legemiddel lM, Lege uL, int pI, int r){
+    public Resept (Legemiddel lM, Lege uL, Pasient p, int r){
 
         legemiddel = lM;
         utskrivendeLege = uL;
-        pasientId = pI;
+        pasient = p;
         reit = r;
         Id = IdCounter++;
     }
@@ -25,8 +25,8 @@ abstract class Resept {
     public Lege hentUtsrivendeLege(){
         return utskrivendeLege;
     }
-    public int hentPasientId(){
-        return pasientId;
+    public Pasient hentPasient(){
+        return pasient;
     }
     public int hentReit(){
         return reit;

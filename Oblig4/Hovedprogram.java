@@ -8,11 +8,12 @@ class Hovedprogram {
 
         Lege lege = new Lege("Hans Gunnar Ekjold");
         Spesialist spesialist = new Spesialist("Peter Pan",5);
+        Pasient pasient = new Pasient("Kåre","FN1234");
 
-        PResept presept = new PResept(narkotisk1,lege,1);
-        BlaaResept blaaresept = new BlaaResept(vanedannende1,lege,2,2);
-        MilitaerResept militaer = new MilitaerResept(narkotisk1,spesialist,3,2);
-        HvitResept hvitresept = new HvitResept(vanlig1,spesialist,4,10);
+        PResept presept = new PResept(narkotisk1,lege,pasient);
+        BlaaResept blaaresept = new BlaaResept(vanedannende1,lege,pasient,2);
+        MilitaerResept militaer = new MilitaerResept(narkotisk1,spesialist,pasient,2);
+        HvitResept hvitresept = new HvitResept(vanlig1,spesialist,pasient,10);
 
         //Test av toString av alle objektklassene.
         System.out.println(narkotisk1);
