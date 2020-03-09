@@ -6,7 +6,11 @@ class Test {
     }
 
     public void skrivUt(){
-        
         System.out.println("ny setning");
     }
+    public void funksjon1(){
+    }
+    public void funksjon2(){
+    }
+
 }
