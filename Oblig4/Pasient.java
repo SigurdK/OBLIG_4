@@ -19,4 +19,7 @@ class Pasient {
     public Stabel hentReseptListe(){
         return stabel;
     }
+    public String toString(){
+        return "Pasientens navn: "+navn+"\nPasientens fodselsnummer: "+fodselsnummer+"\nPasientens ID: "+ ID;
+    }
 }

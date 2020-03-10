@@ -24,11 +24,12 @@ class TestResepter {
         System.out.println(presept.farge());
         System.out.println(blaaresept.prisAaBetale());
         System.out.println(blaaresept.hentLegemiddel());
+        System.out.println("NYLINJE1\n");
         System.out.println(blaaresept.hentPasient());
         System.out.println(blaaresept.farge());
         System.out.println(presept.hentId());
         System.out.println(blaaresept.hentId());
-        System.out.println("NYLINJE\n");
+        System.out.println("NYLINJE2\n");
         System.out.println(militaer.hentId());
         System.out.println(militaer.prisAaBetale());
 
