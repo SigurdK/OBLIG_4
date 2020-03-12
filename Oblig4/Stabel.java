@@ -1,3 +1,4 @@
+import java.util.Iterator;
 class Stabel<T> extends Lenkeliste<T>{
 
     public Stabel(){//Oppfører seg nå likt som en Lenkeliste:

@@ -1,6 +1,10 @@
 import java.util.NoSuchElementException;
 
-class Lenkeliste<T> implements Liste<T>{
+import java.lang.Iterable;
+import java.util.Iterator;
+
+abstract class Lenkeliste<T> implements Liste<T>,Iterable<T>{
+
     class Node{
         public Node neste; //Oppretter en neste node peker
         public Node forrige; //Oppretter en forrige Node peker
@@ -10,6 +14,7 @@ class Lenkeliste<T> implements Liste<T>{
             data = x;
         }
     }
+
     Node hode = new Node(null); //start (eldste element O*** =>)
     Node hale = new Node(null); // nyeste element (***O)
     int antallNoder;//Ikke private nå da jeg kan sjekke antall noder i listen med .antallNoder
@@ -19,6 +24,8 @@ class Lenkeliste<T> implements Liste<T>{
         hale.forrige = hode;//halens forrige peler til å peke på hodet
         antallNoder = 0; //antall elementer lik 0
     }
+
+
 
     public int stoerrelse(){ //Sjekker gjennom lista og teller så lenge hode av listen ikke er lik halen.
         int count = 0;
@@ -103,5 +110,29 @@ class Lenkeliste<T> implements Liste<T>{
             }
         }else{ throw new UgyldigListeIndeks(pos);}
         return temp.data;
+    }
+
+    public Iterator<T> iterator(){
+        return new LenkelisteIterator();
+    }
+
+    public class LenkelisteIterator implements Iterator<T> {
+
+        Node temp = hode;
+
+        public T next(){
+
+            temp = temp.neste;
+            T data = temp.data;
+
+            return data;
+        }
+
+        public boolean hasNext(){
+            return temp.neste != hale;
+        }
+        public void remove(){
+
+        }
     }
 }

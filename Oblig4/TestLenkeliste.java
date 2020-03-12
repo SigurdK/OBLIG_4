@@ -1,4 +1,4 @@
-public class TestLenkeliste {
+/*public class TestLenkeliste {
     private static int antallTester = 0;
     private static int antallPasserte = 0;
     private static int antallFeil = 0;
@@ -206,4 +206,4 @@ public class TestLenkeliste {
         antallFeil++;
         System.out.println("- Test " + antallTester + " feilet: " + testmelding);
     }
-}
+}*/
