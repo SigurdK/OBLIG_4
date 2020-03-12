@@ -1,9 +1,8 @@
 import java.util.NoSuchElementException;
 
-import java.lang.Iterable;
 import java.util.Iterator;
 
-abstract class Lenkeliste<T> implements Liste<T>,Iterable<T>{
+abstract class Lenkeliste<T> implements Liste<T>{
 
     class Node{
         public Node neste; //Oppretter en neste node peker
