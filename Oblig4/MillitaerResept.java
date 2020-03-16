@@ -1,13 +1,13 @@
-public class BlaaResept extends Resept {
+public class MillitaerResept extends HvitResept {
 
-    public BlaaResept(Legemiddel legeMiddel, Lege utskrevenLege, Pasient pasient, int reit){
+    public MillitaerResept(Legemiddel legeMiddel, Lege utskrevenLege, Pasient pasient, int reit){
         super(legeMiddel,  utskrevenLege,  pasient,  reit);
     }
     public String farge(){
-        return "Blaa";
+        return "Hvit";
     }
     public double prisAaBetale(){
-        return legemiddel.hentPris()*0.25;
+        return 0;
     }
     public String toString(){
 

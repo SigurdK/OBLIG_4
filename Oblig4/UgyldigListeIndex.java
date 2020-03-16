@@ -1,5 +1,5 @@
-class UgyldigListeIndeks extends RuntimeException {
-    UgyldigListeIndeks(int indeks) {
+public class UgyldigListeIndex extends RuntimeException{
+    UgyldigListeIndex(int indeks) {
         super("Ugyldig indeks:"+indeks);
     }
 }

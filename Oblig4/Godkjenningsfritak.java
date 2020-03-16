@@ -1,4 +1,3 @@
-public interface Godkjenningsfritak{
-
-    public int hentKontrollID();
+public interface Godkjenningsfritak {
+    public int hentKontrollId();
 }

@@ -1,15 +1,9 @@
 import java.util.NoSuchElementException;
 
-class Lenkeliste<T> implements Liste<T>{
-    class Node{
-        public Node neste; //Oppretter en neste node peker
-        public Node forrige; //Oppretter en forrige Node peker
-        public T data;
+import java.util.Iterator;
 
-        public Node(T x){ //konstruktør til klassen Node.
-            data = x;
-        }
-    }
+public class Lenkeliste<T> implements Liste<T>{
+
     Node hode = new Node(null); //start (eldste element O*** =>)
     Node hale = new Node(null); // nyeste element (***O)
     int antallNoder;//Ikke private nå da jeg kan sjekke antall noder i listen med .antallNoder
@@ -19,6 +13,7 @@ class Lenkeliste<T> implements Liste<T>{
         hale.forrige = hode;//halens forrige peler til å peke på hodet
         antallNoder = 0; //antall elementer lik 0
     }
+
 
     public int stoerrelse(){ //Sjekker gjennom lista og teller så lenge hode av listen ikke er lik halen.
         int count = 0;
@@ -47,7 +42,7 @@ class Lenkeliste<T> implements Liste<T>{
         if(hode.neste != hale){
             hode.neste = hode.neste.neste; //hodets neste-peker peker på nestes neste
             hode.neste.forrige = hode; // det andre elementet blir det første
-        }else {throw new UgyldigListeIndeks(-1);}
+        }else {throw new UgyldigListeIndex(-1);}
         antallNoder--; //reduserer antall noder
         return x;
     }
@@ -60,7 +55,7 @@ class Lenkeliste<T> implements Liste<T>{
                 temp = temp.neste;
             }
             temp.data = nyNode.data;
-        }else { throw new UgyldigListeIndeks(pos);}
+        }else { throw new UgyldigListeIndex(pos);}
     }
 
     public void leggTil(int pos, T x){
@@ -75,7 +70,7 @@ class Lenkeliste<T> implements Liste<T>{
             nyNode.neste=temp;
             nyNode.forrige.neste = nyNode;
 
-        }else{ throw new UgyldigListeIndeks(pos);}
+        }else{ throw new UgyldigListeIndex(pos);}
         antallNoder ++;
     }
 
@@ -89,7 +84,7 @@ class Lenkeliste<T> implements Liste<T>{
             temp.neste.forrige = temp.forrige;
             temp.forrige.neste = temp.neste;
 
-        }else{ throw new UgyldigListeIndeks(pos);}
+        }else{ throw new UgyldigListeIndex(pos);}
 
         antallNoder --;
         return temp.data;
@@ -101,7 +96,40 @@ class Lenkeliste<T> implements Liste<T>{
             for (int i = 0 ; i<pos ; i++){
                 temp = temp.neste;
             }
-        }else{ throw new UgyldigListeIndeks(pos);}
+        }else{ throw new UgyldigListeIndex(pos);}
         return temp.data;
+    }
+    protected class Node{
+        public Node neste; //Oppretter en neste node peker
+        public Node forrige; //Oppretter en forrige Node peker
+        public T data;
+
+        public Node(T x){ //konstruktør til klassen Node.
+            data = x;
+        }
+    }
+
+    public Iterator<T> iterator(){
+        return new LenkelisteIterator();
+    }
+    private class LenkelisteIterator implements Iterator<T> {
+
+        private Node temp;
+        LenkelisteIterator(){
+            temp = hode;
+        }
+
+        public boolean hasNext(){
+            return temp.neste != hale;
+        }
+
+        public T next(){
+            temp = temp.neste;
+            T data = temp.data;
+            return data;
+        }
+
+        public void remove(){
+        }
     }
 }

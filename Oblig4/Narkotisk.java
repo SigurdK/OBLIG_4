@@ -1,5 +1,4 @@
-class Narkotisk extends Legemiddel {
-    // tar også inn styrke i konstruktøren
+public class Narkotisk extends Legemiddel {
     protected int styrke;
 
     public Narkotisk(String navn, double pris, double virkestoff, int s){
@@ -9,6 +8,7 @@ class Narkotisk extends Legemiddel {
     public int hentNarkotiskStyrke(){
         return styrke;
     }
+    @Override
     public String toString(){
         return "\nLEGEMIDDEL\nType: Narkotisk"+"\nNavn: "+navn+"\nID: "+Id+"\nPris: "+pris+"\nVirkestoff (mg): "+virkestoff+"\nStyrke: "+styrke;
     }

@@ -1,5 +1,5 @@
-abstract class Legemiddel {
-    //Har en statisk variabel Id countersom holder orden på antall objekter av legemiddel
+//Har en statisk variabel Id counter som holder orden på antall objekter av legemiddel
+public abstract class Legemiddel {
     protected String navn;
     protected double pris;
     protected double virkestoff;

@@ -1,5 +1,5 @@
-class Vanedannende extends Legemiddel {
-    //tar også inn en styrke i konstruktøren.
+public class Vanedannende extends Legemiddel{
+
     protected int styrke;
 
     public Vanedannende(String navn, double pris, double virkestoff, int s){
