@@ -5,7 +5,7 @@ public class Legesystemet {
 
     Lenkeliste<Pasient> pasientene = new Lenkeliste<>();
     Lenkeliste<Legemiddel> legemiddlene = new Lenkeliste<>();
-    Lenkeliste<Lege> legene = new Lenkeliste<>();
+    SortertLenkeliste<Lege> legene = new SortertLenkeliste<>();
 
     //Sorter legeListen med instanceOf
 
@@ -19,14 +19,8 @@ public class Legesystemet {
     }
     public void skrivUtLeger(){
         for(Lege lege : legene){
-            lege.skrivReseptListe();
-
-            /*try{ //catcher alle resepter som er ulovlige?
-                System.out.println(lege);
-                lege.skrivReseptListe();
-            }catch (NullPointerException e){
-                System.out.println("Dette går ikke.");
-            }*/
+            System.out.println(lege);
+            //lege.skrivReseptListe();
         }
     }
     public void skrivUtLegemiddler(){
@@ -162,7 +156,6 @@ public class Legesystemet {
                     }catch (UlovligUtskrift e){
                         System.out.println(e.getMessage());
                     }
-
                 }
             }
         }
