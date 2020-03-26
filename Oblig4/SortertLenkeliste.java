@@ -1,4 +1,4 @@
-class SortertLenkeliste<T extends Comparable<T>> extends Lenkeliste<T>{
+public class SortertLenkeliste<T extends Comparable<T>> extends Lenkeliste<T>{
 
     public SortertLenkeliste(){
         super();
@@ -13,8 +13,8 @@ class SortertLenkeliste<T extends Comparable<T>> extends Lenkeliste<T>{
         }
         for(int i = 0; i < stoerrelse(); i++){ //sjekker om noe er større, såfall, legge inn element foran.
             if(hent(i).compareTo(x) > 0){
-                    super.leggTil(i,x); //må også ha super her da jeg overrider funksjonen under, men ønsker å bruke superklassens versjon.
-                    return;
+                super.leggTil(i,x); //må også ha super her da jeg overrider funksjonen under, men ønsker å bruke superklassens versjon.
+                return;
             }
         }
         super.leggTil(x);//hvis elementet er størst, så legg til bakerst.

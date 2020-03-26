@@ -1,8 +1,7 @@
-import java.util.NoSuchElementException;
-
 import java.util.Iterator;
 
 public class Lenkeliste<T> implements Liste<T>{
+
 
     Node hode = new Node(null); //start (eldste element O*** =>)
     Node hale = new Node(null); // nyeste element (***O)
@@ -13,7 +12,6 @@ public class Lenkeliste<T> implements Liste<T>{
         hale.forrige = hode;//halens forrige peler til å peke på hodet
         antallNoder = 0; //antall elementer lik 0
     }
-
 
     public int stoerrelse(){ //Sjekker gjennom lista og teller så lenge hode av listen ikke er lik halen.
         int count = 0;
@@ -33,7 +31,6 @@ public class Lenkeliste<T> implements Liste<T>{
         hale.forrige.neste = nyNode;
         nyNode.forrige = hale.forrige;
         hale.forrige = nyNode;
-
         antallNoder ++; //Øker tellerene på antall noder
     }
 
@@ -112,6 +109,7 @@ public class Lenkeliste<T> implements Liste<T>{
     public Iterator<T> iterator(){
         return new LenkelisteIterator();
     }
+
     private class LenkelisteIterator implements Iterator<T> {
 
         private Node temp;

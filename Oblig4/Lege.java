@@ -6,12 +6,28 @@ public class Lege implements Comparable<Lege>{
     public Lege(String n){
         navn = n;
     }
+
     public int compareTo(Lege annen){
         return navn.compareTo(annen.navn);
     }
 
     public Lenkeliste<Resept> hentReseptListe(){
         return utskrevedeResepter;
+    }
+
+    public void skrivReseptlisteLiten(){
+        for (Resept resept : utskrevedeResepter){
+            resept.skrivReseptLiten();
+        }
+    }
+    public int narkoTeller(){
+        int teller = 0;
+        for (Resept resept : utskrevedeResepter){
+            if (resept.hentLegemiddel() instanceof Narkotisk){
+                teller++;
+            }
+        }
+        return teller;
     }
 
     public void skrivReseptListe(){
@@ -32,6 +48,7 @@ public class Lege implements Comparable<Lege>{
         } else {
             HvitResept resepten = new HvitResept(legemiddel, this, pasient, reit);
             utskrevedeResepter.leggTil(resepten);
+            //pasient.leggTilResept(resepten);
             return resepten;
         }
     }
@@ -41,6 +58,7 @@ public class Lege implements Comparable<Lege>{
         } else {
             MillitaerResept resepten = new MillitaerResept(legemiddel, this, pasient, reit);
             utskrevedeResepter.leggTil(resepten);
+            //pasient.leggTilResept(resepten);
             return resepten;
         }
     }
@@ -50,6 +68,7 @@ public class Lege implements Comparable<Lege>{
         } else {
             PResept resepten = new PResept(legemiddel, this, pasient);
             utskrevedeResepter.leggTil(resepten);
+            //pasient.leggTilResept(resepten);
             return resepten;
         }
 
@@ -60,10 +79,13 @@ public class Lege implements Comparable<Lege>{
         } else {
             BlaaResept resepten = new BlaaResept(legemiddel, this, pasient, reit);
             utskrevedeResepter.leggTil(resepten);
+            //pasient.leggTilResept(resepten);
             return resepten;
         }
     }
-
+    public String printTilFil(){
+        return navn+","+0;
+    }
 
     public String toString(){
         return "\nLegens navn: "+this.hentNavn();

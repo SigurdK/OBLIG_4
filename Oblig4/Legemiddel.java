@@ -1,4 +1,3 @@
-//Har en statisk variabel Id counter som holder orden på antall objekter av legemiddel
 public abstract class Legemiddel {
     protected String navn;
     protected double pris;
@@ -27,5 +26,6 @@ public abstract class Legemiddel {
     public void settNyPris(double nyPris){
         pris = nyPris;
     }
+    abstract public String printTilFil();
     abstract public String toString();
 }
