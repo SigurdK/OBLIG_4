@@ -131,7 +131,7 @@ public class Legesystemet {
                                 legemiddelet = legemiddel;
                             }
                         }
-                        //fnger opp at det ikke skapes resepter som er med tomt innhold.
+                        //fanger opp at det ikke skapes resepter som er med tomt innhold.
                         if (!(legen == null || pasienten == null || legemiddelet == null)){
                             switch (type) {
                                 case "hvit":
@@ -142,7 +142,7 @@ public class Legesystemet {
                                     //assert legen != null;
                                     legen.skrivBlaaResept(legemiddelet, pasienten, reit);
                                     break;
-                                case "millitaer":
+                                case "militaer":
                                     //assert legen != null;
                                     legen.skrivMillitaerResept(legemiddelet, pasienten, reit);
                                     break;
